@@ -1,6 +1,24 @@
 from telethon import TelegramClient, events, types
 from config import Config
-from database import save_user, get_all_users
+from .database import save_user, get_all_users
+
+import sys
+import os
+
+# Ye 2 lines zaroori hain taaki folder ke bahar wali config.py dikh sake
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+import config  # Ab ye bahar wali config.py ko utha lega
+from . import database  # Ye apne hi folder ki database.py ko utha lega
+
+
+
+
+
+
+
+
+
 
 # Bot Connection using Config
 bot = TelegramClient('id_pro_session', Config.API_ID, Config.API_HASH).start(bot_token=Config.BOT_TOKEN)
