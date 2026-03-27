@@ -3,11 +3,31 @@ from config import Config
 from .database import save_user, get_all_users
 import sys
 import os
+from .plugins import admin
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import config  # Ab ye bahar wali config.py ko utha lega
 from . import database  # Ye apne hi folder ki database.py ko utha lega
 # Bot Connection using Config
 bot = TelegramClient('id_pro_session', Config.API_ID, Config.API_HASH).start(bot_token=Config.BOT_TOKEN)
+
+
+bot.add_event_handler(admin.stats)
+bot.add_event_handler(admin.broadcast)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # ID Fix Function (Wahi pehle wala)
 def format_id(peer, raw_id):
@@ -63,23 +83,6 @@ async def raw_handler(event):
                         await bot.send_message(msg.peer_id, response_text, reply_to=msg.id, parse_mode='md')
     except Exception as e:
         print(f"Error: {e}")
-
-@bot.on(events.NewMessage(pattern='/broadcast'))
-async def broadcast_handler(event):
-    if event.sender_id != Config.ADMIN_ID: return
-    b_message = event.message.message.replace('/broadcast', '').strip()
-    if not b_message: return
-
-    await event.reply("🚀 Broadcasting...")
-    all_users = get_all_users()
-    success = 0
-    for user_doc in all_users:
-        try:
-            await bot.send_message(user_doc['user_id'], b_message)
-            success += 1
-        except: pass
-    await event.reply(f"✅ Sent to {success} users.")
-
 print("✅ Bot is Live with Modular Structure (Config + Database)!")
 bot.run_until_disconnected()
 

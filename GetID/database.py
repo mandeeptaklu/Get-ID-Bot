@@ -10,6 +10,7 @@ def save_user(user_id):
         users_col.insert_one({"user_id": user_id})
 
 def get_all_users():
-    return users_col.find({})
+    # .find() ek cursor deta hai, use list mein convert karo
+    return list(users_col.find({}))
 
 
