@@ -1,0 +1,5 @@
+API_ID=30180241
+API_HASH="e628a3c18d15d87a3954699bb5953d8b"
+BOT_TOKEN=8509143719:AAE7TtD9rJPOD4kZEdYDt2zcgUomOrsiAIM
+MONGO_URI=mongodb://mandeep:taklu@ac-1jemagy-shard-00-00.z6bo4ws.mongodb.net:27017,ac-1jemagy-shard-00-01.z6bo4ws.mongodb.net:27017,ac-1jemagy-shard-00-02.z6bo4ws.mongodb.net:27017/?ssl=true&replicaSet=atlas-lqfwqs-shard-0&authSource=admin&appName=Cluster0
+ADMIN_ID=8126957656

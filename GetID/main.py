@@ -1,3 +1,4 @@
+import asycio
 from telethon import TelegramClient, events, types
 from config import Config
 from .database import save_user, get_all_users
@@ -84,5 +85,15 @@ async def raw_handler(event):
     except Exception as e:
         print(f"Error: {e}")
 print("✅ Bot is Live with Modular Structure (Config + Database)!")
-bot.run_until_disconnected()
+
+async def main():
+    # Aapka bot start karne ka logic yahan aayega
+    await bot._start() 
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        pass
+
 

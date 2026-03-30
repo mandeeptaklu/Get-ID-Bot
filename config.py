@@ -14,7 +14,12 @@ class Config:
     START_MSG = (
         "✨ **Welcome to ID Finder** ✨\n\n"
         "🚀 `Use Buttons below to get someone's ID`\n\n"
-        "━━━━━━━━━━━━━━━━━━━━"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "**Bot Command**\n"
+        "/start **Start the bot**\n\n"
+        "**Admin Command\n**"
+        "/broadcast **For Broadcasting Message**\n" 
+        "/stats **Show users database**\n"
     )
-    DEV_TEXT = "🔗 **Developer:** [Udit](tg://user?id=8126957656)\n\n*Contact for any queries!*"
+    DEV_TEXT = "🔗 **Developer:**[@masterbwn](t.me/masterbwn)\n\n*Contact for any queries!*"
 
