@@ -1,4 +1,4 @@
-import asycio
+import asyncio
 from telethon import TelegramClient, events, types
 from config import Config
 from .database import save_user, get_all_users
