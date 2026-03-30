@@ -2,4 +2,7 @@ telethon
 python-dotenv
 cryptography
 pymongo[srv]
+pymongo
+dnspython
+
 
